@@ -10,6 +10,12 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     axios.post(`${apiBaseUrl}/login`, formData)
     .then(function (response) {
         localStorage.setItem('token', response.data.token);
+
+        // Store the expiry date (20 days from now)
+        const currentDate = new Date();
+        currentDate.setDate(currentDate.getDate() + 20);
+        localStorage.setItem('expiry', currentDate.toISOString());
+
         window.location.href = 'dashboard.html'; // Redirect to the dashboard
     })
     .catch(function (error) {
@@ -20,5 +26,6 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 
 function logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('expiry');  // Also clear the expiry date
     window.location.href = 'index.html';
-  }
+}

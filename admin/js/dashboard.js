@@ -13,8 +13,11 @@ document.addEventListener('DOMContentLoaded', function() {
     easymde = new EasyMDE({ element: document.getElementById('newPropertyDescription') });
 
     const token = localStorage.getItem('token');
-    if (!token) {
-        window.location.href = 'index.html'; // Redirect to login if no token
+    const expiry = localStorage.getItem('expiry');
+
+    // Check if the current date is past the stored expiry date
+    if (!token || new Date() > new Date(expiry)) {
+        logout();
     }
 
     // Event listener for form submission

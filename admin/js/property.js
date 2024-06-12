@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     const token = localStorage.getItem('token');
-    if (!token) {
-        window.location.href = 'index.html'; // Redirect if no token exists
+    const expiry = localStorage.getItem('expiry');
+
+    // Check if the current date is past the stored expiry date
+    if (!token || new Date() > new Date(expiry)) {
+        logout();  // Call logout if token is expired or not present
     }
     const id = localStorage.getItem('currentPropertyId');
 
