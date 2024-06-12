@@ -1,0 +1,180 @@
+/* Basic resets and body setup with Dracula background and text colors */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #282a36; /* Dracula background color */
+    color: #f8f9fa; /* Dracula foreground color */
+    font-family: Arial, sans-serif;
+}
+
+/* Container for page content with subtle padding and rounded corners */
+.container {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #44475a; /* Dracula current line color for mild contrast */
+    margin: 20px auto;
+    width: 95%;
+    max-width: 1200px;
+}
+
+/* Navigation styling */
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.nav button {
+    background-color: #6272a4; /* Dracula comment color */
+    color: #f8f9fa; /* Dracula foreground color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.nav button:hover {
+    background-color: #50fa7b; /* Dracula green for hover */
+}
+
+/* Form styling */
+.form-inline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-group {
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ffb86c; /* Dracula orange for labels */
+}
+
+input[type="password"],
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #6272a4; /* Dracula comment color for borders */
+    background-color: #282a36; /* Dracula background color */
+    color: #f8f9fa; /* Dracula foreground color */
+}
+
+/* Textarea specific styling */
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Button styling for forms */
+.button, .btn {
+    background-color: #bd93f9; /* Dracula purple */
+    color: #282a36;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #ff79c6; /* Dracula pink for hover */
+}
+
+/* Specific button styles */
+.btn-success {
+    background-color: #50fa7b; /* Dracula green */
+}
+
+.btn-success:hover {
+    background-color: #6272a4; /* Dracula comment color for hover */
+}
+
+.btn-info {
+    background-color: #8be9fd; /* Dracula cyan */
+}
+
+.btn-info:hover {
+    background-color: #50fa7b; /* Dracula green */
+}
+
+.btn-danger {
+    background-color: #ff5555; /* Dracula red */
+}
+
+.btn-danger:hover {
+    background-color: #ffb86c; /* Dracula orange */
+}
+
+/* Styling for property listings */
+.property {
+    background-color: #44475a; /* Dracula current line color */
+    border: 1px solid #6272a4; /* Dracula comment color */
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.property h3 {
+    color: #ff79c6; /* Dracula pink for headers */
+}
+
+.property p {
+    color: #f8f9fa; /* Dracula foreground color */
+    line-height: 1.5;
+}
+
+.property img {
+    border-radius: 4px; /* Soften edges */
+}
+
+.property-details {
+    flex: 1;
+    min-width: 200px; /* Ensure a minimum width */
+}
+
+.property-images {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.property-images img {
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 200px; /* Ensure images fit within container */
+    margin-bottom: 5px;
+}
+
+/* Media Queries */
+@media (max-width: 767px) {
+    .property {
+        flex-direction: column;
+    }
+    .property-details, .property-images {
+        width: 100%;
+    }
+    .property-images {
+        justify-content: flex-start;
+    }
+}
+
+
+.imagesContainer img {
+    width: 200px; /* You can adjust this as necessary */
+    height: auto; /* Maintain aspect ratio */
+    margin: 10px; /* Add margin around images */
+    border-radius: 5px; /* Optional: adds rounded corners to your images */
+}

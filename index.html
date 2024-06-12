@@ -4,8 +4,9 @@
       <title>Coastal Property Management</title>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+      <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&family=Merriweather:wght@400;700&family=Fira+Code&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="assets/css/main.css" />
-	  <link rel="stylesheet" href="assets/css/styles.css" />
+	  <!--<link rel="stylesheet" href="assets/css/styles.css" />-->
      	  <!-- Standard favicon -->
           <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
           <!-- Apple Touch Icon -->
@@ -46,18 +47,18 @@
                <!-- Banner -->
                <section id="banner">
                   <div class="content">
-                     <header>
-                        <h1>Welcome to</h1>
-                        <h2>Coastal Property Management</h2>
-                        <p1>
-                        Your trusted partner in property management, construction, and landscaping services in Saint John.</p>
-                     </header>
+                       <h1>WELCOME TO</h1>
+                        <!--<img src="images/logo_dark.png" alt="Coastal Property Management Logo" width="200" height="200">-->
+                       <h2>Coastal Property Management</h2>
+                       <p style="text-align: justify;">
+                         Welcome to Coastal Property Management, your trusted partner in property management, construction, and landscaping services. We proudly serve the vibrant community of Saint John, New Brunswick. Whether you're looking to manage your property efficiently, undertake a new construction project, or maintain a beautiful landscape, we are here to help you every step of the way with our dedicated and professional services.
+                       </p>
                      <div class="button-container">
-                        <a href="/contactus.html" class="button">Get a Free Quote</a> 
-                        <a href="/contactus.html" class="button">Manage My Property</a>
-                        <a href="/contactus.html" class="button">Contact Us</a>
+                       <a href="/contactus.html" class="button">Get a Free Quote</a> 
+                       <a href="/contactus.html" class="button">Manage My Property</a>
+                       <a href="/contactus.html" class="button">Contact Us</a>
                      </div>
-                  </div>
+                   </div>                   
                </section>
                <!-- Properties -->
                <section>
@@ -131,13 +132,11 @@
                      <li><a href="services.html">Services</a></li>
                      <li><a href="https://coastalpropertymanagementgb.managebuilding.com/Resident/rental-application/new" target="_blank">Rental Application</a></li>
                      <li><a href="contactus.html">Contact Us</a></li>
-                     <li style="margin-top: 20px;">
-                        <a href="Buildium Client"><button class="sidebar-button">Client Login</button></a>
-                     </li>
-                     <li style="border-top:unset">
-                        <a href="https://coastalpropertymanagementgb.managebuilding.com/Resident/portal" target="_blank"><button class="sidebar-button">Tenant Login</button></a>
-                     </li>
                   </ul>
+                  <div class="sidebar-buttons">
+                     <a href="Buildium Client"><button class="sidebar-button">Client Login</button></a>
+                     <a href="https://coastalpropertymanagementgb.managebuilding.com/Resident/portal" target="_blank"><button class="sidebar-button">Tenant Login</button></a>
+                  </div>
                </nav>
                <!-- Section -->
                <section>
@@ -154,7 +153,7 @@
                </section>
                <!-- Footer -->
                <footer id="footer">
-                  <p>&copy; <span id="currentYear"></span> Coastal Property Management. All rights reserved.</p>
+                  <p class="copyright">&copy; <span id="currentYear"></span> Coastal Property Management. All rights reserved.</p>
                </footer>
                <script>
                   document.getElementById("currentYear").innerHTML = new Date().getFullYear();
