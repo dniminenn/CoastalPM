@@ -2507,7 +2507,7 @@ button.sidebar-button {
 
 .blur-background {
   filter: blur(8px);
-  pointer-events: none; /* Disables interaction with the background */
+  pointer-events: none;
 }
 
 .modal {
@@ -2516,8 +2516,9 @@ button.sidebar-button {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #2E3440;
-  border: 1px solid rgba(216, 222, 233, 0.75);
-  box-shadow: 0 4px 8px rgba(216, 222, 233, 0.1);
+  border: 3px solid #88C0D0;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   z-index: 10000;
   display: none;
   overflow: auto;
@@ -2526,6 +2527,7 @@ button.sidebar-button {
   height: auto;
   max-height: 80%;
   padding: 3em;
+  transition: all 0.3s ease;
 }
 .modal .modal-content {
   padding: 3em;
@@ -2539,32 +2541,55 @@ button.sidebar-button {
   font-weight: bold;
   cursor: pointer;
   color: #D8DEE9;
+  transition: color 0.3s ease;
+}
+.modal .modal-content .close:hover {
+  color: #88C0D0;
 }
 .modal .modal-content .large-image {
   width: 100%;
   height: auto;
   display: block;
   margin-bottom: 2em;
+  border-radius: 10px;
 }
 .modal .modal-content .price {
   text-transform: uppercase;
   font-size: 1.25em;
-  color: #D8DEE9;
+  color: #88C0D0;
   font-weight: bold;
   padding-top: 1em;
 }
 .modal .modal-content .carousel {
   display: flex;
   overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thick;
+  scrollbar-color: #88C0D0 #2E3440;
   margin-bottom: 2em;
+  padding: 10px 0;
+  position: relative;
+}
+.modal .modal-content .carousel::-webkit-scrollbar {
+  height: 8px;
+  background: #2E3440;
+}
+.modal .modal-content .carousel::-webkit-scrollbar-thumb {
+  background-color: #88C0D0;
+  border-radius: 10px;
+  border: 2px solid #2E3440;
 }
 .modal .modal-content .carousel .carousel-image {
   max-width: 100px;
   margin-right: 10px;
   cursor: pointer;
+  border-radius: 8px;
 }
 .modal .modal-content .carousel .carousel-image:last-child {
   margin-right: 0;
+}
+.modal .modal-content .carousel .carousel-image:hover {
+  opacity: 0.8;
 }
 .modal .modal-content p {
   color: #D8DEE9;
@@ -2581,6 +2606,7 @@ button.sidebar-button {
     left: 0;
     transform: none;
     padding: 0;
+    border-radius: 0;
   }
 }
 /* Sidebar */
