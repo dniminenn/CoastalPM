@@ -40,18 +40,18 @@ $font: (
   kerning-heading: 0.075em, // Slight kerning to improve spacing in headings
 );
 
-// Nord Palette.
 $palette: (
-  bg: #2E3440,           // Polar Night (Background)
-  bg-alt: #3B4252,       // Slightly lighter Polar Night for alt sections
-  fg: #D8DEE9,           // Snow Storm (Foreground)
-  fg-bold: #ECEFF4,      // Bright Snow Storm for bold text
-  fg-light: #B0BEC5,     // Darker light text for better contrast
-  border: rgba(216, 222, 233, 0.75),  // Semi-transparent light grey border
-  border-bg: transparentize(#D8DEE9, 0.75), // Semi-transparent Snow Storm for background borders
-  accent: #88C0D0,       // Frost (Accent)
-  secondary-accent: #81A1C1  // Aurora (Secondary Accent)
-);/*
+  bg: #2B2D3E,
+  bg-alt: #44485D,
+  fg: #D8E0E8,
+  fg-bold: #FF6B6B,
+  fg-light: #A9B3C2,
+  border: rgba(216, 224, 232, 0.75),
+  border-bg: transparentize(#D8E0E8, 0.75),
+  accent: #FF8484,
+  secondary-accent: #FFABAB
+);
+/*
 // Dracula Palette.
 /*$palette: (
   bg: #282a36,
