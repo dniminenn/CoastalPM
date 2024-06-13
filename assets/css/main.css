@@ -2504,6 +2504,11 @@ button.sidebar-button {
   }
 }
 
+.blur-background {
+  filter: blur(8px);
+  pointer-events: none; /* Disables interaction with the background */
+}
+
 .modal {
   position: fixed;
   top: 50%;
