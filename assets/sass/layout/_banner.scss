@@ -17,6 +17,7 @@
 		.content {
 			@include vendor('flex-grow', '1');
 			@include vendor('flex-shrink', '1');
+			text-align: center;
 			width: 50%;
 		}
 

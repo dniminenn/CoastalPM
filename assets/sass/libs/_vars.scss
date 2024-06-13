@@ -1,44 +1,77 @@
 // Misc.
-	$misc: (
-		z-index-base:		10000
-	);
+$misc: (
+  z-index-base: 10000,
+);
 
 // Duration.
-	$duration: (
-		nav:				0.5s,
-		transition:			0.2s
-	);
+$duration: (
+  nav: 0.5s,
+  transition: 0.2s,
+);
 
 // Size.
-	$size: (
-		border-radius:		0.375em,
-		element-height:		2.75em,
-		element-margin:		2em,
-		sidebar-width:		26em,
-		sidebar-width-alt:	24em,
-		gutter:				3em
-	);
+$size: (
+  border-radius: 0.375em,
+  element-height: 2.75em,
+  element-margin: 2em,
+  sidebar-width: 26em,
+  sidebar-width-alt: 24em,
+  gutter: 3em,
+);
 
 // Font.
-	$font: (
-		family:				('Open Sans', sans-serif),
-		family-heading:		('Roboto Slab', serif),
-		family-fixed:		('Courier New', monospace),
-		weight:				400,
-		weight-bold:		600,
-		weight-heading:		700,
-		weight-heading-alt:	400,
-		kerning-heading:	0.075em
-	);
+$font: (
+  family: (
+    "Work Sans", // Changed from Open Sans for a more modern, clean look
+    sans-serif,
+  ),
+  family-heading: (
+    "Work Sans", // Using Work Sans for headings for a consistent look
+    sans-serif,
+  ),
+  family-fixed: (
+    "Fira Code", // Changed from Courier New for better legibility and features
+    monospace,
+  ),
+  weight: 400, // Regular weight for body text
+  weight-bold: 600, // Bold weight for emphasized text
+  weight-heading: 700, // Bold weight for headings
+  weight-heading-alt: 400, // Regular weight for alternative heading styles
+  kerning-heading: 0.075em, // Slight kerning to improve spacing in headings
+);
 
-// Palette.
-	$palette: (
-		bg:					#ffffff,
-		bg-alt:				#f5f6f7,
-		fg:					#7f888f,
-		fg-bold:			#3d4449,
-		fg-light:			#9fa3a6,
-		border:				rgba(210,215,217,0.75),
-		border-bg:			transparentize(#e6ebed, 0.75),
-		accent:				#f56a6a
-	);
+/*// Nord Palette.
+$palette: (
+  bg: #2E3440,           // Polar Night (Background)
+  bg-alt: #3B4252,       // Slightly lighter Polar Night for alt sections
+  fg: #D8DEE9,           // Snow Storm (Foreground)
+  fg-bold: #ECEFF4,      // Bright Snow Storm for bold text
+  fg-light: #B0BEC5,     // Darker light text for better contrast
+  border: rgba(216, 222, 233, 0.75),  // Semi-transparent light grey border
+  border-bg: transparentize(#D8DEE9, 0.75), // Semi-transparent Snow Storm for background borders
+  accent: #88C0D0,       // Frost (Accent)
+  secondary-accent: #81A1C1  // Aurora (Secondary Accent)
+);*/
+// Dracula Palette.
+/*$palette: (
+  bg: #282a36,
+  bg-alt: #44475a,
+  fg: #f8f8f2,
+  fg-bold: #50fa7b,
+  fg-light: #6272a4,
+  border: rgba(68, 71, 90, 0.75),
+  border-bg: transparentize(#44475a, 0.75),
+  accent: #ff79c6
+);*/
+$palette: (
+  bg: #ffffff, // White background for a clean look
+  bg-alt: #f8f9fa, // Very light gray for alternate sections
+  fg: #343a40, // Dark gray for primary text
+  fg-bold: #007bff, // Bright blue for bold text
+  fg-light: #6c757d, // Medium gray for lighter text
+  border: rgba(52, 58, 64, 0.1), // Light border for a subtle effect
+  border-bg: rgba(52, 58, 64, 0.05), // Very light border background
+  accent: #fd7e14 // Vibrant orange for accent elements
+);
+
+

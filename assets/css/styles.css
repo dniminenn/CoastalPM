@@ -7,25 +7,30 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	background-color: #2E3440; /* Polar Night */
+	color: #D8DEE9; /* Snow Storm */
+	padding: 0 20px;
 }
 
 #header .logo {
 	margin: 0 20px;
-	/* Adjust spacing as needed */
-}
-
-section#banner {
-    text-align: center;
+	text-align: center;
+	flex-grow: 1;
+	color: #D8DEE9; /* Snow Storm */
 }
 
 #header .icons {
 	display: flex;
 	list-style: none;
 	padding: 0;
+	margin: 0;
+	justify-content: flex-end;
+	flex-grow: 0;
+	color: #D8DEE9; /* Snow Storm */
 }
 
 #header .icons li {
-	padding: 0 10px;
+	padding-left: 10px;
 }
 
 .left-icons {
@@ -38,36 +43,10 @@ section#banner {
 	flex-grow: 1;
 }
 
-
-#header {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	/* This will ensure everything is centered */
-	padding: 0 20px;
-}
-
-#header .logo {
-	flex-grow: 1;
-	/* Allows the logo to take up space and push icons to the edge */
-	text-align: center;
-	/* Ensures the logo is centered within its space */
-}
-
-#header .icons {
-	display: flex;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	justify-content: flex-end;
-	/* Ensures icons stay on the right */
-	flex-grow: 0;
-	/* Prevents icons from pushing the logo */
-}
-
-#header .icons li {
-	padding-left: 10px;
-	/* Space between icons */
+section#banner {
+    text-align: center;
+    background-color: #3B4252; /* Slightly lighter Polar Night */
+    color: #D8DEE9; /* Snow Storm */
 }
 
 @media (max-width: 600px) {
@@ -75,86 +54,76 @@ section#banner {
 		flex-direction: column;
 		align-items: center;
 		padding-top: 20px;
-		/* Adds space above for better spacing on mobile */
 	}
 
 	#header .logo,
 	#header .icons {
 		flex-grow: 0;
-		/* Stop growing in mobile view */
 		justify-content: center;
-		/* Center content */
 	}
 
 	#header .icons {
 		margin-top: 10px;
-		/* Space between logo and icons on mobile */
 	}
 }
 
 .social-icons {
 	padding-top: 1.5rem;
 	display: flex;
-    justify-content: right;
+	justify-content: right;
+	color: #D8DEE9; /* Snow Storm */
 }
 
 .button:hover {
-	background-color: #e64545;
-	/* Darker shade for hover effect */
+	background-color: #81A1C1; /* Aurora */
+	color: #2E3440; /* Polar Night */
 }
 
 .button-container {
-        display: flex;
-        justify-content: center;
-  }
-  
-  .button-container .button {
-        margin: 0 10px;
-  }
-  
-  @media (max-width: 768px) {
-    .button-container {
-        flex-direction: column;
-        align-items: center;
-    }
-  
-    .button-container .button {
-        width: 100%;
-        margin: 10px 0;
-    }
-  }
-  
-button.sidebar-button {
-    padding: 20px !important;
-    background-color: rgba(75, 73, 73, 0.63); 
-    color: white !important; 
-    font-weight: bold; 
-    width: 60%; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center
+	display: flex;
+	justify-content: center;
 }
 
-    .sidebar-button:hover {
-        color: black !important;
-    }
+.button-container .button {
+	margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+	.button-container {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.button-container .button {
+		width: 100%;
+		margin: 10px 0;
+	}
+}
+
+button.sidebar-button {
+	padding: 20px !important;
+	background-color: rgba(59, 66, 82, 0.63); /* Slightly lighter Polar Night with transparency */
+	color: #D8DEE9 !important; /* Snow Storm */
+	font-weight: bold;
+	width: 60%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.sidebar-button:hover {
+	color: #2E3440 !important; /* Polar Night */
+}
 
 .contact-form {
-	font-family: Arial, Helvetica, sans-serif;
-	/* Consistent font */
-	background-color: #fff;
-	/* Light theme */
-	color: #000000;
-	/* Soft black for text */
+	font-family: 'Open Sans', sans-serif;
+	background-color: #3B4252; /* Slightly lighter Polar Night */
+	color: #D8DEE9; /* Snow Storm */
 	padding: 20px;
-	border: 1px solid #ffffff;
-	/* Subtle borders */
+	border: 1px solid #4C566A; /* Border color */
 	max-width: 600px;
-	/* Ensures the form is not too wide on larger screens */
 	margin: auto;
-	/* Centers the form */
 }
-
 
 .contact-form input[type="text"],
 .contact-form input[type="email"],
@@ -164,55 +133,26 @@ button.sidebar-button {
 	padding: 8px;
 	margin-top: 5px;
 	margin-bottom: 10px;
-	background-color: #f8f8f8;
-	/* Light gray background */
-	border: 1px solid #d1d1d1;
-	/* Light gray border */
+	background-color: #434C5E; /* Darker background */
+	border: 1px solid #4C566A; /* Border color */
+	color: #D8DEE9; /* Snow Storm */
 	box-sizing: border-box;
 }
 
 .contact-form input[type="submit"] {
-	background-color: #444;
-	/* Darker background for the button */
-	color: white;
-	/* White text for contrast */
+	background-color: #81A1C1; /* Aurora */
+	color: #2E3440; /* Polar Night */
 	border: none;
 	padding: 10px 20px;
 	cursor: pointer;
 	transition: background-color 0.3s ease;
-	/* Smooth transition for hover effect */
-}
-
-.contact-form input[type="submit"]:hover {
-	background-color: #333;
-	/* Slightly darker on hover */
-}
-
-.contact-form input[type="submit"] {
-	background-color: #444;
-	/* Dark background for contrast */
-	color: white;
-	/* White text for visibility */
-	border: none;
-	padding: 10px 20px;
-	cursor: pointer;
-	font-family: Arial, sans-serif;
-	/* Ensures font consistency */
-	text-align: center;
-	/* Centers text horizontally */
 	width: 100%;
-	/* Ensures the button stretches to container width */
 	box-sizing: border-box;
-	/* Includes padding in the width */
 	display: block;
-	/* Makes the button a block element */
 	line-height: 20px;
-	/* Adjust this based on your button's height to center text vertically */
-	transition: background-color 0.3s ease;
-	/* Smooth transition for hover effect */
+	text-align: center;
 }
 
 .contact-form input[type="submit"]:hover {
-	background-color: #333;
-	/* Slightly darker on hover */
+	background-color: #88C0D0; /* Slightly lighter Aurora */
 }
