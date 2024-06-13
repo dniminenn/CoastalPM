@@ -2,7 +2,7 @@
 let easymde;
 
 function getPublicImageUrl(privateUrl) {
-    const publicBaseUrl = 'https://pub-9b3caab195e44a388ac13a713b1693f2.r2.dev';
+    const publicBaseUrl = 'https://coastalpm-assets.nbnerds.ca';
     const urlParts = privateUrl.split('/');
     const imageFilename = urlParts.pop(); // Get the last segment which should be the filename
     return `${publicBaseUrl}/${imageFilename}`; // Construct the public URL
