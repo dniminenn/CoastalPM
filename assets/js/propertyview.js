@@ -35,16 +35,17 @@ function toggleModal(propertyId) {
         return;
     }
 
-    let imagesHtml = property.images.map(img => `
-        <img src="${getPublicImageUrl(img.url)}" class="carousel-image" alt="Property Image">
+    let imagesHtml = property.images.map((img, index) => `
+        <img src="${getPublicImageUrl(img.url)}" class="carousel-image" alt="Property Image" onclick="updateLargeImage('${getPublicImageUrl(img.url)}')">
     `).join('');
 
     const modalContent = `
         <div class="modal-content">
             <span class="close" onclick="closeModal(this)">&times;</span>
-            <img src="${getPublicImageUrl(property.images[0].url)}" class="large-image" alt="Main Property Image">
+            <img src="${getPublicImageUrl(property.images[0].url)}" class="large-image" alt="Main Property Image" id="mainImage">
             ${property.images.length > 1 ? `<div class="carousel">${imagesHtml}</div>` : ''}
             <p>${marked.parse(property.description)}</p>
+            <p class="price">Price: $${property.price} per month</p>
         </div>
     `;
 
@@ -53,6 +54,13 @@ function toggleModal(propertyId) {
     modal.innerHTML = modalContent;
     document.body.appendChild(modal);
     modal.style.display = 'block';
+}
+
+function updateLargeImage(url) {
+    const mainImage = document.getElementById('mainImage');
+    if (mainImage) {
+        mainImage.src = url;
+    }
 }
 
 function closeModal(element) {
