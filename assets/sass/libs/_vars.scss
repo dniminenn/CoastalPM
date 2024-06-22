@@ -41,37 +41,14 @@ $font: (
 );
 
 $palette: (
-  bg: #272228,
-  bg-alt: #423A30,
-  fg: #D9D2C9,
-  fg-bold: #E1B53F,
-  fg-light: #B3A79C,
-  border: rgba(217, 210, 201, 0.75),
-  border-bg: transparentize(#D9D2C9, 0.75),
-  accent: #FFD552,
-  secondary-accent: #FFAB53
+  bg: #2B2D3E,
+  bg-alt: #44485D,
+  fg: #D8E0E8,
+  fg-bold: #FF6B6B,
+  fg-light: #A9B3C2,
+  border: rgba(216, 224, 232, 0.75),
+  border-bg: transparentize(#D8E0E8, 0.75),
+  accent: #FF8484,
+  secondary-accent: #FFABAB
 );
-/*
-// Dracula Palette.
-/*$palette: (
-  bg: #282a36,
-  bg-alt: #44475a,
-  fg: #f8f8f2,
-  fg-bold: #50fa7b,
-  fg-light: #6272a4,
-  border: rgba(68, 71, 90, 0.75),
-  border-bg: transparentize(#44475a, 0.75),
-  accent: #ff79c6
-);
-$palette: (
-  bg: #ffffff, // White background for a clean look
-  bg-alt: #f8f9fa, // Very light gray for alternate sections
-  fg: #343a40, // Dark gray for primary text
-  fg-bold: #007bff, // Bright blue for bold text
-  fg-light: #6c757d, // Medium gray for lighter text
-  border: rgba(52, 58, 64, 0.1), // Light border for a subtle effect
-  border-bg: rgba(52, 58, 64, 0.05), // Very light border background
-  accent: #fd7e14 // Vibrant orange for accent elements
-);
-*/
 
