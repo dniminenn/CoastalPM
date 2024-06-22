@@ -23,7 +23,7 @@ form {
         font-size: 0.9em;
         font-weight: _font(weight-bold);
         margin: 0;
-        text-align: right; /* Align label text to the right */
+        text-align: left;
         padding-right: 10px;
         display: flex;
         align-items: center;
@@ -37,14 +37,16 @@ form {
         background: _palette(bg);
         border-radius: _size(border-radius);
         border: none;
-        border: solid 1px _palette(border);
-        color: inherit;
+        border: solid 1px _palette(fg);
+        color: _palette(fg-light);
         display: block;
         outline: 0;
         padding: 0 10px; /* Reduce padding */
         text-decoration: none;
         width: 100%;
         height: 2.5em; /* Reduce height */
+        background-color: _palette(bg-alt);
+        font-size: 0.8em;
 
         &:invalid {
             box-shadow: none;
@@ -58,9 +60,10 @@ form {
 
     textarea {
         padding: 0.5em 10px; /* Reduce padding */
-        height: 5em; /* Adjust height */
+        height: 10em; /* Adjust height */
         grid-column: 1 / -1; /* Span both columns */
         resize: none; /* Prevent resizing */
+        background-color: _palette(bg-alt);
     }
 }
 
@@ -68,7 +71,7 @@ form {
     grid-column: 1 / -1; /* Span both columns */
     display: flex;
     flex-direction: column;
-    align-items: center;
+    //align-items: center;
 
     input[type="submit"] {
         margin-top: 10px; /* Reduce margin */
@@ -157,3 +160,29 @@ input[type="submit"] {
         width: 100%;
     }
 }
+
+.contact-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .contact-form {
+    flex: 1;
+    margin-right: 20px; /* Adjust the spacing between form and image */
+  }
+  
+  .image-placeholder-container {
+    flex: 1;
+  }
+  
+  @media (max-width: 768px) {
+    .contact-section {
+      flex-direction: column;
+    }
+  
+    .contact-form {
+      margin-right: 0;
+      margin-bottom: 20px; /* Add spacing between form and image on mobile */
+    }
+  }
