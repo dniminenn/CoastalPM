@@ -57,15 +57,18 @@
         height: 5px;
         background-color: _palette(accent);
         visibility: visible;
-        will-change: transform;
         transform: translateZ(0);
-        transition: none; // Ensure no transition interferes before animation
-        animation: growBorder2 3s ease-out forwards;
-        animation-play-state: paused; /* Pause by default */
+        animation: none; // No animation by default
     }
 
     &.animate::after {
-        animation-play-state: running;
+        animation: growBorder2 3s ease-out forwards;
+    }
+
+    &.done::after {
+        width: 100%;
+        left: 0;
+        background-color: _palette(accent); // Ensure border color stays after animation
     }
 }
 
