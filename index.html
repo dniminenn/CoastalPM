@@ -303,20 +303,24 @@
         document.body.classList.add("fade-in");
       });
     </script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const header = document.querySelector('#header');
-        const images = document.querySelectorAll('.image.image-placeholder');
-    
-        // Directly add the 'animate' class to the header and images without checking sessionStorage
-        if (header) {
-          header.classList.add('animate');
-        }
-    
-        images.forEach(image => {
-          image.classList.add('animate');
-        });
-      });
-    </script>
+<script>
+  function setUpAnimations() {
+    const header = document.querySelector('#header');
+    const images = document.querySelectorAll('.image.image-placeholder');
+
+    if (header) {
+      header.classList.add('animate');
+    }
+
+    images.forEach(image => {
+      image.classList.add('animate');
+    });
+
+    // Remove the event listener to prevent re-adding classes
+    document.removeEventListener('DOMContentLoaded', setUpAnimations);
+  }
+
+  document.addEventListener('DOMContentLoaded', setUpAnimations);
+</script>
   </body>
 </html>
