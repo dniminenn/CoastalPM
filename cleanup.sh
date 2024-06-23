@@ -7,6 +7,7 @@ FILES_TO_DELETE=(
     "image_handler.py"
     "cleanup.sh"
     "README.txt"
+    "README.md"
 )
 
 for file in "${FILES_TO_DELETE[@]}"; do

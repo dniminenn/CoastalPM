@@ -1,15 +1,24 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Select the header and all image placeholder elements
-    const header = document.querySelector('#header');
-    const imagePlaceholders = document.querySelectorAll('.image.image-placeholder');
+    let animationsApplied = false; // Flag to control the animation trigger
 
-    // Add 'animate' class to the header if it exists
-    if (header) {
-        header.classList.add('animate');
+    // Function to add animations
+    function addAnimations() {
+        if (!animationsApplied) {
+            const header = document.querySelector('#header');
+            const imagePlaceholders = document.querySelectorAll('.image.image-placeholder');
+
+            if (header) {
+                header.classList.add('animate');
+            }
+
+            imagePlaceholders.forEach(image => {
+                image.classList.add('animate');
+            });
+
+            animationsApplied = true; // Set the flag to true after applying animations
+        }
     }
 
-    // Add 'animate' class to all image placeholder elements
-    imagePlaceholders.forEach(image => {
-        image.classList.add('animate');
-    });
+    // Initial call to add animations
+    addAnimations();
 });
