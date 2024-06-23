@@ -70,7 +70,7 @@ function toggleModal(propertyId) {
             : ""
         }
         <p>${marked.parse(property.description)}</p>
-        <p class="price">Price: $${property.price} per month</p>
+        <p class="price">Price: <strong>$${property.price}</strong> per month</p>
     </div>
   `;
 
