@@ -1,6 +1,6 @@
-### This site can be deployed as is to GitHub pages as is.
+### This site can be deployed as is to GitHub Pages
 
-**For CloudFlare pages, see below**
+**For CloudFlare Pages, see below**
 
 # Website Deployment to Cloudflare Pages
 
