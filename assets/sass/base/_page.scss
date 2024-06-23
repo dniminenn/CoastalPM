@@ -39,7 +39,7 @@ html {
 body {
   background: _palette(bg);
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 1s ease-in-out;
 
   // Stops initial animations until page loads or stops resizing.
   &.is-preload,
