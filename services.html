@@ -73,11 +73,66 @@
           <!-- Header -->
           <header id="header">
             <a href="index.html" class="logo">
-              <img
-                src="images/logo_dark.webp"
-                alt="Coastal Property Management Logo"
-                width="300"
-              />
+              <svg height="350px" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter
+                    id="bloom"
+                    x="-50%"
+                    y="-50%"
+                    width="200%"
+                    height="200%"
+                  >
+                    <feGaussianBlur
+                      in="SourceAlpha"
+                      stdDeviation="10"
+                      result="blur"
+                    />
+                    <!-- Increased blur for bigger bloom -->
+                    <feFlood
+                      flood-color="#3bccc5"
+                      flood-opacity="1"
+                      result="color"
+                    />
+                    <!-- Changed color to teal and reduced opacity -->
+                    <feComposite
+                      in="color"
+                      in2="blur"
+                      operator="in"
+                      result="glow"
+                    />
+                    <feMerge>
+                      <feMergeNode in="glow" />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
+                  <filter
+                    id="shadow"
+                    x="-10%"
+                    y="-10%"
+                    width="130%"
+                    height="130%"
+                  >
+                    <feOffset in="SourceAlpha" dx="5" dy="5" result="offset" />
+                    <feGaussianBlur
+                      in="offset"
+                      stdDeviation="3"
+                      result="shadowBlur"
+                    />
+                    <feFlood flood-color="black" flood-opacity="0.5" />
+                    <feComposite in2="shadowBlur" operator="in" />
+                    <feMerge>
+                      <feMergeNode />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
+                </defs>
+                <image
+                  filter="url(#bloom) url(#shadow)"
+                  href="images/logo_dark.svg"
+                  width="100%"
+                  height="100%"
+                />
+              </svg>
             </a>
           </header>
           <!-- Section -->
@@ -164,7 +219,9 @@
                     src="images/placeholders/money-2696229_640.webp"
                     alt="Money, time"
                   />
-                  <span class="image-caption">Fair pricing and efficient service</span>
+                  <span class="image-caption"
+                    >Fair pricing and efficient service</span
+                  >
                 </div>
               </article>
             </div>
@@ -174,97 +231,96 @@
         </div>
       </div>
 
-     <!-- Sidebar -->
-     <div id="sidebar">
-      <div class="inner">
-        <!-- Menu -->
-        <nav id="menu">
-          <header class="major">
-            <h2>Menu</h2>
-          </header>
-          <ul>
-            <li>
-              <a href="index.html"
-                >Homepage <i class="fa fa-home" aria-hidden="true"></i></a
-              >
-            </li>
-            <li>
-              <a href="about.html"
-                ></i>About
-                Us <i class="fa fa-info-circle" aria-hidden="true"></i></a
-              >
-            </li>
-            <li>
-              <a href="services.html"
-                >Services <i class="fa fa-cogs" aria-hidden="true"></i></a
-              >
-            </li>
-            <li>
+      <!-- Sidebar -->
+      <div id="sidebar">
+        <div class="inner">
+          <!-- Menu -->
+          <nav id="menu">
+            <header class="major">
+              <h2>Menu</h2>
+            </header>
+            <ul>
+              <li>
+                <a href="index.html"
+                  >Homepage <i class="fa fa-home" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="about.html"
+                  >About Us <i class="fa fa-info-circle" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="services.html"
+                  >Services <i class="fa fa-cogs" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://coastalpropertymanagementgb.managebuilding.com/Resident/rental-application/new"
+                  target="_blank"
+                >
+                  Rental Application
+                  <i class="fa fa-file-alt" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a href="contactus.html"
+                  >Contact Us <i class="fa fa-envelope" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
+            <div class="sidebar-buttons">
+              <a href="Buildium Client">
+                <button class="sidebar-button">
+                  <i class="fa fa-user" aria-hidden="true"></i> Client Login
+                </button>
+              </a>
               <a
-                href="https://coastalpropertymanagementgb.managebuilding.com/Resident/rental-application/new"
+                href="https://coastalpropertymanagementgb.managebuilding.com/Resident/portal"
                 target="_blank"
               >
-                Rental Application <i class="fa fa-file-alt" aria-hidden="true"></i>
+                <button class="sidebar-button">
+                  <i class="fa fa-sign-in-alt" aria-hidden="true"></i> Tenant
+                  Login
+                </button>
               </a>
-            </li>
-            <li>
-              <a href="contactus.html"
-                >Contact
-                Us <i class="fa fa-envelope" aria-hidden="true"></i></a
-              >
-            </li>
-          </ul>
-          <div class="sidebar-buttons">
-            <a href="Buildium Client">
-              <button class="sidebar-button">
-                <i class="fa fa-user" aria-hidden="true"></i> Client Login
-              </button>
-            </a>
-            <a
-              href="https://coastalpropertymanagementgb.managebuilding.com/Resident/portal"
-              target="_blank"
-            >
-              <button class="sidebar-button">
-                <i class="fa fa-sign-in-alt" aria-hidden="true"></i> Tenant
-                Login
-              </button>
-            </a>
-          </div>
-        </nav>
-        <!-- Section -->
-        <section>
-          <header class="major">
-            <h2>
-              <i class="fa fa-phone" aria-hidden="true"></i> Get in touch
-            </h2>
-          </header>
-          <p>
-            Hey there! Whether it's managing properties, tackling construction
-            projects, or beautifying landscapes, we've got you covered. Let's
-            bring your vision to life – reach out and let's make it happen!
-          </p>
-          <ul class="contact">
-            <li class="icon solid fa-envelope">
-              <a href="mailto:info@coastalpm.ca">info@coastalpm.ca</a>
-            </li>
-            <li class="icon solid fa-phone">
-              <a href="tel:5067090420">506-709-0420</a>
-            </li>
-            <li class="icon solid fa-home">Grand Bay-Westfield</li>
-            <li class="icon solid fa-wrench">
-              Also serving Saint John, Rothesay, Quispamsis
-            </li>
-          </ul>
-        </section>
-        <footer id="footer">
-          <p class="copyright">
-            &copy; <span id="currentYear"></span> Coastal Property Management.
-            All rights reserved.
-          </p>
-        </footer>
+            </div>
+          </nav>
+          <!-- Section -->
+          <section>
+            <header class="major">
+              <h2>
+                <i class="fa fa-phone" aria-hidden="true"></i> Get in touch
+              </h2>
+            </header>
+            <p>
+              Hey there! Whether it's managing properties, tackling construction
+              projects, or beautifying landscapes, we've got you covered. Let's
+              bring your vision to life – reach out and let's make it happen!
+            </p>
+            <ul class="contact">
+              <li class="icon solid fa-envelope">
+                <a href="mailto:info@coastalpm.ca">info@coastalpm.ca</a>
+              </li>
+              <li class="icon solid fa-phone">
+                <a href="tel:5067090420">506-709-0420</a>
+              </li>
+              <li class="icon solid fa-home">Grand Bay-Westfield</li>
+              <li class="icon solid fa-wrench">
+                Also serving Saint John, Rothesay, Quispamsis
+              </li>
+            </ul>
+          </section>
+          <footer id="footer">
+            <p class="copyright">
+              &copy; <span id="currentYear"></span> Coastal Property Management.
+              All rights reserved.
+            </p>
+          </footer>
+        </div>
       </div>
     </div>
-  </div>
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
@@ -276,9 +332,9 @@
         new Date().getFullYear();
     </script>
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        document.body.classList.add('fade-in');
+      document.addEventListener("DOMContentLoaded", function () {
+        document.body.classList.add("fade-in");
       });
-    </script>    
+    </script>
   </body>
 </html>
