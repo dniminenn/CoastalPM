@@ -1715,6 +1715,7 @@ img {
 .image.image-placeholder {
   position: relative;
   display: inline-block;
+  /* Animation plays when 'animate' class is added */
 }
 .image.image-placeholder img {
   display: block;
@@ -1747,6 +1748,9 @@ img {
   height: 0;
   border-left: none;
   border-top: none;
+}
+.image.image-placeholder.animate::before, .image.image-placeholder.animate::after {
+  animation-play-state: running;
 }
 .image.image-placeholder .image-caption {
   font-variant: small-caps;
@@ -3004,9 +3008,11 @@ button.sidebar-button {
   will-change: transform;
   transform: translateZ(0);
   transition: none;
+  animation: growBorder2 3s ease-out forwards;
+  animation-play-state: paused; /* Pause by default */
 }
 #header.animate::after {
-  animation: growBorder2 3s ease-out forwards;
+  animation-play-state: running;
 }
 
 @keyframes growBorder2 {

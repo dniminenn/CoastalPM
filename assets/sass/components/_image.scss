@@ -1,134 +1,142 @@
 /* Image */
 .image {
-    border-radius: 0;
-    border: 6px solid _palette(bg-alt);
-    display: inline-block;
-    position: relative;
+  border-radius: 0;
+  border: 6px solid _palette(bg-alt);
+  display: inline-block;
+  position: relative;
 }
 
 img {
-    border-radius: 0;
-    display: block;
+  border-radius: 0;
+  display: block;
 }
 
 .image.left,
 .image.right {
-    max-width: 40%;
+  max-width: 40%;
 
-    img {
-        width: 100%;
-    }
+  img {
+    width: 100%;
+  }
 }
 
 .image.left {
-    float: left;
-    padding: 0 1.5em 1em 0;
-    top: 0.25em;
+  float: left;
+  padding: 0 1.5em 1em 0;
+  top: 0.25em;
 }
 
 .image.right {
-    float: right;
-    padding: 0 0 1em 1.5em;
-    top: 0.25em;
+  float: right;
+  padding: 0 0 1em 1.5em;
+  top: 0.25em;
 }
 
 .image.fit,
 .image.main {
-    display: block;
-    margin: 0 0 _size(element-margin) 0;
-    width: 100%;
+  display: block;
+  margin: 0 0 _size(element-margin) 0;
+  width: 100%;
 
-    img {
-        width: 100%;
-    }
+  img {
+    width: 100%;
+  }
 }
 
 .image.image-placeholder {
+  position: relative;
+  display: inline-block;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
     position: relative;
-    display: inline-block;
+  }
 
-    img {
-        display: block;
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    border: 6px solid _palette(accent);
+    animation: growBorder 3s ease-out forwards;
+    animation-fill-mode: forwards; // Keeps the CSS values from the last keyframe after the animation ends
+    visibility: visible; // Prevents visibility toggling that can reset animations
+    will-change: transform; // Optimizes performance, hinting to the browser the element will transform
+    transform: translateZ(
+      0
+    ); // Promotes layering in GPU, can improve performance and prevent re-animation
+  }
 
-    &::before,
-    &::after {
-        content: "";
-        position: absolute;
-        border: 6px solid _palette(accent);
-        animation: growBorder 3s ease-out forwards;
-        animation-fill-mode: forwards; // Keeps the CSS values from the last keyframe after the animation ends
-        visibility: visible; // Prevents visibility toggling that can reset animations
-        will-change: transform; // Optimizes performance, hinting to the browser the element will transform
-        transform: translateZ(0); // Promotes layering in GPU, can improve performance and prevent re-animation
-    }
+  &::before {
+    top: -6px;
+    left: -6px;
+    width: 0;
+    height: 0;
+    border-right: none;
+    border-bottom: none;
+  }
 
-    &::before {
-        top: -6px;
-        left: -6px;
-        width: 0;
-        height: 0;
-        border-right: none;
-        border-bottom: none;
-    }
+  &::after {
+    bottom: -6px;
+    right: -6px;
+    width: 0;
+    height: 0;
+    border-left: none;
+    border-top: none;
+  }
 
-    &::after {
-        bottom: -6px;
-        right: -6px;
-        width: 0;
-        height: 0;
-        border-left: none;
-        border-top: none;
-    }
+  /* Animation plays when 'animate' class is added */
+  &.animate::before,
+  &.animate::after {
+    animation-play-state: running;
+  }
 
-    .image-caption {
-        font-variant: small-caps;
-        text-align: center;
-        margin-top: 0.5em;
-        font-size: 1.2em;
-        color: _palette(fg-light);
-        margin: 0.5em;
-    }
+  .image-caption {
+    font-variant: small-caps;
+    text-align: center;
+    margin-top: 0.5em;
+    font-size: 1.2em;
+    color: _palette(fg-light);
+    margin: 0.5em;
+  }
 }
 
 @keyframes growBorder {
-    to {
-        width: 25%;
-        height: 35%;
-    }
+  to {
+    width: 25%;
+    height: 35%;
+  }
 }
 
 a.image {
-    overflow: hidden;
+  overflow: hidden;
 
+  img {
+    @include vendor("transition", "transform #{_duration(transition)} ease");
+  }
+
+  &:hover {
     img {
-        @include vendor('transition', 'transform #{_duration(transition)} ease');
+      @include vendor("transform", "scale(1.075)");
     }
-
-    &:hover {
-        img {
-            @include vendor('transform', 'scale(1.075)');
-        }
-    }
+  }
 }
 
 /* Image Placeholder Container */
 .image-placeholder-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 2em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2em 0;
 
-    .image-placeholder {
-        width: 90%;
-        background-color: _palette(bg-alt);
+  .image-placeholder {
+    width: 90%;
+    background-color: _palette(bg-alt);
 
-        @media screen and (min-width: 768px) {
-            width: 75%;
-        }
+    @media screen and (min-width: 768px) {
+      width: 75%;
     }
+  }
 }
