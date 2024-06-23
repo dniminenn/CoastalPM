@@ -1726,7 +1726,7 @@ img {
   content: "";
   position: absolute;
   border: 6px solid #FF8484;
-  animation: growBorder 5s ease-out forwards;
+  animation: growBorder 3s ease-out forwards;
 }
 .image.image-placeholder::before {
   top: -6px;
@@ -2947,12 +2947,8 @@ button.sidebar-button {
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
-  border-bottom: solid 5px #FF8484;
-  /*padding: 6em 0 1em 0;*/
   position: relative;
-  /*@include breakpoint('<=xlarge') {
-  	padding-top: 5em;
-  }*/
+  border-bottom: solid 5px transparent;
 }
 #header > * {
   -moz-flex: 1;
@@ -2971,6 +2967,11 @@ button.sidebar-button {
 #header .icons {
   text-align: right;
 }
+@media screen and (max-width: 1680px) {
+  #header {
+    padding-top: 5em;
+  }
+}
 @media screen and (max-width: 736px) {
   #header {
     padding-top: 6.5em;
@@ -2987,12 +2988,35 @@ button.sidebar-button {
     top: 0;
   }
 }
+#header::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 5px;
+  background-color: #FF8484;
+  animation: growBorder2 3s ease-out forwards;
+}
 
+@keyframes growBorder2 {
+  from {
+    width: 0;
+    left: 50%;
+  }
+  to {
+    width: 100%;
+    left: 0;
+  }
+}
 .social-icons {
   padding-top: 1.5rem;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
   display: flex;
   justify-content: right;
-  color: #D8DEE9; /* Snow Storm */
+  color: #D8DEE9;
   margin-bottom: 0px;
 }
 

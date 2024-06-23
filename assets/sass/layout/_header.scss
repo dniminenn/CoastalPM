@@ -5,56 +5,76 @@
 ///
 
 /* Header */
+#header {
+	@include vendor('display', 'flex');
+	position: relative;
+	border-bottom: solid 5px transparent; // Initially set to transparent to hide the border.
 
-	#header {
-		@include vendor('display', 'flex');
-		border-bottom: solid 5px _palette(accent);
-		/*padding: 6em 0 1em 0;*/
-		position: relative;
+	> * {
+		@include vendor('flex', '1');
+		margin-bottom: 0;
+	}
 
-		> * {
-			@include vendor('flex', '1');
-			margin-bottom: 0;
-		}
+	.logo {
+		border-bottom: 0;
+		color: inherit;
+		font-family: _font(family-heading);
+		font-size: 1.125em;
+		text-align: center;
+	}
+
+	.icons {
+		text-align: right;
+	}
+
+	@include breakpoint('<=xlarge') {
+		padding-top: 5em;
+	}
+
+	@include breakpoint('<=small') {
+		padding-top: 6.5em;
 
 		.logo {
-			border-bottom: 0;
-			color: inherit;
-			font-family: _font(family-heading);
-			font-size: 1.125em;
-			text-align: center;
+			font-size: 1.25em;
+			margin: 0;
 		}
 
 		.icons {
-			text-align: right;
-		}
-
-		/*@include breakpoint('<=xlarge') {
-			padding-top: 5em;
-		}*/
-
-		@include breakpoint('<=small') {
-			padding-top: 6.5em;
-
-			.logo {
-				font-size: 1.25em;
-				margin: 0;
-			}
-
-			.icons {
-				height: (6.25em / 1.25);
-				line-height: (6.25em / 1.25);
-				position: absolute;
-				right: (-0.625em / 1.25);
-				top: 0;
-			}
+			height: (6.25em / 1.25);
+			line-height: (6.25em / 1.25);
+			position: absolute;
+			right: (-0.625em / 1.25);
+			top: 0;
 		}
 	}
 
-	.social-icons {
-		padding-top: 1.5rem;
-		display: flex;
-		justify-content: right;
-		color: #D8DEE9; /* Snow Storm */
-		margin-bottom: 0px;
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: -5px; // Align with the bottom of the header
+		left: 50%;
+		width: 0;
+		height: 5px;
+		background-color: _palette(accent); // Accent color for the border
+		animation: growBorder2 3s ease-out forwards;
 	}
+}
+
+@keyframes growBorder2 {
+	from {
+		width: 0;
+		left: 50%;
+	}
+	to {
+		width: 100%;
+		left: 0;
+	}
+}
+
+.social-icons {
+	padding-top: 1.5rem;
+	@include vendor('display', 'flex');
+	justify-content: right;
+	color: #D8DEE9; // Snow Storm
+	margin-bottom: 0px;
+}
