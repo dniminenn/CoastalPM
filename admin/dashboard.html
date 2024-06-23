@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="css/style.css">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/easymde/dist/easymde.min.css">
+</head>
+<body class="bg-dark text-light">
+    <div class="container">
+        <h1>Property Dashboard</h1>
+        <div class="nav mb-3">
+            <button onclick="logout()" class="btn btn-secondary">Logout</button>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <form id="createPropertyForm">
+                    <div class="form-group">
+                        <label for="newPropertyName">Property Name</label>
+                        <input type="text" class="form-control" id="newPropertyName" placeholder="Property Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newPropertyPrice">Property Price</label>
+                        <input type="number" class="form-control" id="newPropertyPrice" placeholder="Property Price" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newPropertyLocation">Property Location</label>
+                        <input type="text" class="form-control" id="newPropertyLocation" placeholder="Property Location" required>
+                    </div>
+                    <button type="submit" class="btn btn-success mb-2">Create Property</button>
+                </form>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="newPropertyDescription">Property Description</label>
+                    <textarea id="newPropertyDescription" class="form-control" placeholder="Property Description"></textarea>
+                </div>
+            </div>
+        </div>
+        <div id="propertiesList" class="mt-4">
+            <!-- Properties will be dynamically inserted here -->
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/easymde/dist/easymde.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
