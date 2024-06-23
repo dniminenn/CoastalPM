@@ -1,133 +1,130 @@
 /* Image */
-
 .image {
-	border-radius: 0;
-	border: 6px solid _palette(bg-alt);
-	display: inline-block;
-	position: relative;
-  
-	img {
-	  border-radius: 0;
-	  display: block;
-	}
-  
-	&.left,
-	&.right {
-	  max-width: 40%;
-  
-	  img {
-		width: 100%;
-	  }
-	}
-  
-	&.left {
-	  float: left;
-	  padding: 0 1.5em 1em 0;
-	  top: 0.25em;
-	}
-  
-	&.right {
-	  float: right;
-	  padding: 0 0 1em 1.5em;
-	  top: 0.25em;
-	}
-  
-	&.fit {
-	  display: block;
-	  margin: 0 0 _size(element-margin) 0;
-	  width: 100%;
-  
-	  img {
-		width: 100%;
-	  }
-	}
-  
-	&.main {
-	  display: block;
-	  margin: 0 0 (_size(element-margin) * 1.5) 0;
-	  width: 100%;
-  
-	  img {
-		width: 100%;
-	  }
-	}
-  
-	&.image-placeholder {
-	  position: relative;
-	  display: inline-block;
-  
-	  img {
-		display: block;
-		width: 100%;
-		height: auto;
-		position: relative;
-	  }
-  
-	  &::before,
-	  &::after {
-		content: "";
-		position: absolute;
-		border: 6px solid _palette(accent); // Use accent color for the borders
-	  }
-  
-	  &::before {
-		top: -6px;
-		left: -6px;
-		width: 25%;
-		height: 35%;
-		border-right: none;
-		border-bottom: none;
-	  }
-  
-	  &::after {
-		bottom: -6px;
-		right: -6px;
-		width: 25%;
-		height: 35%;
-		border-left: none;
-		border-top: none;
-	  }
-  
-	  .image-caption {
-		font-variant: small-caps;
-		text-align: center;
-		margin-top: 0.5em;
-		font-size: 1.2em;
-		color: _palette(fg-light);
-		margin: 0.5em;
-	  }
-	}
-  }
-  
-  a.image {
-	overflow: hidden;
-  
-	img {
-	  @include vendor('transition', 'transform #{_duration(transition)} ease');
-	}
-  
-	&:hover {
-	  img {
-		@include vendor('transform', 'scale(1.075)');
-	  }
-	}
-  }
-  
-  /* Image Placeholder Container */
-  
-  .image-placeholder-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	margin: 2em 0;
-  
-	.image-placeholder {
-	  width: 90%;
-	  background-color: _palette(bg-alt);
-  
-	  @media screen and (min-width: 768px) {
-		width: 75%;
-	  }
-	}
-  }
+    border-radius: 0;
+    border: 6px solid _palette(bg-alt);
+    display: inline-block;
+    position: relative;
+}
+
+img {
+    border-radius: 0;
+    display: block;
+}
+
+.image.left,
+.image.right {
+    max-width: 40%;
+
+    img {
+        width: 100%;
+    }
+}
+
+.image.left {
+    float: left;
+    padding: 0 1.5em 1em 0;
+    top: 0.25em;
+}
+
+.image.right {
+    float: right;
+    padding: 0 0 1em 1.5em;
+    top: 0.25em;
+}
+
+.image.fit,
+.image.main {
+    display: block;
+    margin: 0 0 _size(element-margin) 0;
+    width: 100%;
+
+    img {
+        width: 100%;
+    }
+}
+
+.image.image-placeholder {
+    position: relative;
+    display: inline-block;
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        border: 6px solid _palette(accent);
+        animation: growBorder 5s ease-out forwards;
+    }
+
+    &::before {
+        top: -6px;
+        left: -6px;
+        width: 0;
+        height: 0;
+        border-right: none;
+        border-bottom: none;
+    }
+
+    &::after {
+        bottom: -6px;
+        right: -6px;
+        width: 0;
+        height: 0;
+        border-left: none;
+        border-top: none;
+    }
+
+    .image-caption {
+        font-variant: small-caps;
+        text-align: center;
+        margin-top: 0.5em;
+        font-size: 1.2em;
+        color: _palette(fg-light);
+        margin: 0.5em;
+    }
+}
+
+@keyframes growBorder {
+    to {
+        width: 25%;
+        height: 35%;
+    }
+}
+
+a.image {
+    overflow: hidden;
+
+    img {
+        @include vendor('transition', 'transform #{_duration(transition)} ease');
+    }
+
+    &:hover {
+        img {
+            @include vendor('transform', 'scale(1.075)');
+        }
+    }
+}
+
+/* Image Placeholder Container */
+.image-placeholder-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2em 0;
+
+    .image-placeholder {
+        width: 90%;
+        background-color: _palette(bg-alt);
+
+        @media screen and (min-width: 768px) {
+            width: 75%;
+        }
+    }
+}

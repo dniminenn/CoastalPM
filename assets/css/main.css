@@ -1674,42 +1674,44 @@ input[type=submit]:active {
   display: inline-block;
   position: relative;
 }
-.image img {
+
+img {
   border-radius: 0;
   display: block;
 }
-.image.left, .image.right {
+
+.image.left,
+.image.right {
   max-width: 40%;
 }
-.image.left img, .image.right img {
+.image.left img,
+.image.right img {
   width: 100%;
 }
+
 .image.left {
   float: left;
   padding: 0 1.5em 1em 0;
   top: 0.25em;
 }
+
 .image.right {
   float: right;
   padding: 0 0 1em 1.5em;
   top: 0.25em;
 }
-.image.fit {
+
+.image.fit,
+.image.main {
   display: block;
   margin: 0 0 2em 0;
   width: 100%;
 }
-.image.fit img {
-  width: 100%;
-}
-.image.main {
-  display: block;
-  margin: 0 0 3em 0;
-  width: 100%;
-}
+.image.fit img,
 .image.main img {
   width: 100%;
 }
+
 .image.image-placeholder {
   position: relative;
   display: inline-block;
@@ -1724,20 +1726,21 @@ input[type=submit]:active {
   content: "";
   position: absolute;
   border: 6px solid #FF8484;
+  animation: growBorder 5s ease-out forwards;
 }
 .image.image-placeholder::before {
   top: -6px;
   left: -6px;
-  width: 25%;
-  height: 35%;
+  width: 0;
+  height: 0;
   border-right: none;
   border-bottom: none;
 }
 .image.image-placeholder::after {
   bottom: -6px;
   right: -6px;
-  width: 25%;
-  height: 35%;
+  width: 0;
+  height: 0;
   border-left: none;
   border-top: none;
 }
@@ -1750,6 +1753,12 @@ input[type=submit]:active {
   margin: 0.5em;
 }
 
+@keyframes growBorder {
+  to {
+    width: 25%;
+    height: 35%;
+  }
+}
 a.image {
   overflow: hidden;
 }
