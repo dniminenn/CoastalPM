@@ -176,7 +176,7 @@
           <section class="image-placeholder-container">
             <div class="image image-placeholder">
               <img
-                src="images/placeholders/cityscape-sj.webp"
+                src="images/placeholders/cityscape-sj2.webp"
                 alt="Cityscape of Saint John"
               />
               <span class="image-caption">City of Saint John</span>
@@ -367,6 +367,21 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         document.body.classList.add("fade-in");
+      });
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const header = document.querySelector('#header');
+        const images = document.querySelectorAll('.image.image-placeholder');
+    
+        // Directly add the 'animate' class to the header and images without checking sessionStorage
+        if (header) {
+          header.classList.add('animate');
+        }
+    
+        images.forEach(image => {
+          image.classList.add('animate');
+        });
       });
     </script>
   </body>

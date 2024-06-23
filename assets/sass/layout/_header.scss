@@ -56,11 +56,14 @@
         width: 0;
         height: 5px;
         background-color: _palette(accent);
+        visibility: visible;
+        will-change: transform;
+        transform: translateZ(0);
+        transition: none; // Ensure no transition interferes before animation
+    }
+
+    &.animate::after {
         animation: growBorder2 3s ease-out forwards;
-        animation-fill-mode: forwards; // Ensures styles remain as they are at the end of the animation
-        visibility: visible; // Ensure that it does not toggle visibility
-		will-change: transform; // Optimizes performance, hinting to the browser the element will transform
-        transform: translateZ(0); // Promotes layering in GPU, can improve performance and prevent re-animation
     }
 }
 

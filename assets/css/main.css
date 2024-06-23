@@ -3000,11 +3000,13 @@ button.sidebar-button {
   width: 0;
   height: 5px;
   background-color: #FF8484;
-  animation: growBorder2 3s ease-out forwards;
-  animation-fill-mode: forwards;
   visibility: visible;
   will-change: transform;
   transform: translateZ(0);
+  transition: none;
+}
+#header.animate::after {
+  animation: growBorder2 3s ease-out forwards;
 }
 
 @keyframes growBorder2 {
