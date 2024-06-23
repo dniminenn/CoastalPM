@@ -8,6 +8,7 @@ FILES_TO_DELETE=(
     "cleanup.sh"
     "README.txt"
     "README.md"
+    "_config.yml"
 )
 
 for file in "${FILES_TO_DELETE[@]}"; do

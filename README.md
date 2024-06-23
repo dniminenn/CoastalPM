@@ -1,3 +1,7 @@
+### This site can be deployed as is to GitHub pages as is.
+
+**For CloudFlare pages, see below**
+
 # Website Deployment to Cloudflare Pages
 
 This guide explains how to deploy your static HTML website to Cloudflare Pages and run a cleanup script during the deployment process.
