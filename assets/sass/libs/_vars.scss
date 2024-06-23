@@ -40,7 +40,7 @@ $font: (
   kerning-heading: 0.075em, // Slight kerning to improve spacing in headings
 );
 
-$palette: (
+/*$palette: (
   bg: #2B2D3E,
   bg-alt: #44485D,
   fg: #D8E0E8,
@@ -50,5 +50,17 @@ $palette: (
   border-bg: transparentize(#D8E0E8, 0.75),
   accent: #FF8484,
   secondary-accent: #FFABAB
-);
+);*/
 
+$palette: (
+  bg: #2B2D3E,            // Dark blue-gray for background
+  bg-alt: #44485D,        // Slightly lighter blue-gray for alternate backgrounds
+  fg: #B0B8C5,            // Softened gray for foreground
+  fg-bold: #FF6B6B,       // Bold coral for emphasized text
+  fg-light: #8C97A3,      // Darker gray for lighter text
+  border: rgba(176, 184, 197, 0.75),       // Matching softened gray for borders
+  border-bg: transparentize(#B0B8C5, 0.75), // Transparent softer gray for background borders
+  accent: #FF8484,        // Coral as the primary accent color
+  secondary-accent: #FFABAB, // Lighter coral for secondary accents
+  tertiary-accent: #3CCDC6   // Teal for selective use as a tertiary accent
+);
