@@ -1727,6 +1727,10 @@ img {
   position: absolute;
   border: 6px solid #FF8484;
   animation: growBorder 3s ease-out forwards;
+  animation-fill-mode: forwards;
+  visibility: visible;
+  will-change: transform;
+  transform: translateZ(0);
 }
 .image.image-placeholder::before {
   top: -6px;
@@ -2997,6 +3001,10 @@ button.sidebar-button {
   height: 5px;
   background-color: #FF8484;
   animation: growBorder2 3s ease-out forwards;
+  animation-fill-mode: forwards;
+  visibility: visible;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 @keyframes growBorder2 {
