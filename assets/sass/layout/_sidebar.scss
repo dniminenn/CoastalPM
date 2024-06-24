@@ -101,9 +101,6 @@
 			width: 5em;
 			z-index: _misc(z-index-base);
 			color: _palette(fg); // Set default color to foreground
-			background-color:_palette(bg);
-			// radius for corners
-			border-radius: 1em 1em 1em 1em;
 	
 			&:before {
 				content: '\f0c9';
